@@ -15,7 +15,7 @@ data_dur = 1           # amount of time to collect data
 delay    = 0.1         # sleep time
 
 # read two images
-lightOn  = cv2.imread("./raster/lightson.png")         # raster to show when lights on
+lightOn  = cv2.imread("./rasters/lightson.png")         # raster to show when lights on
 
 # Load raster to show when lights off
 # ***** YOUR CODE ***** #
