@@ -3,3 +3,5 @@ requests
 numpy
 opencv-contrib-python
 xlrd
+scipy
+scikit-learn
