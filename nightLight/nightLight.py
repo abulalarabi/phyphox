@@ -4,7 +4,8 @@ import pandas as pd             # for reading data
 import numpy as np              # for calculations
 import cv2                      # for image viewing
 
-IPAddress = '10.228.21.56:8080'  #IP address and port This is different for each person and specified by the phyphox app
+IS_SOUND = False
+IPAddress = 'xxx.xxx.xxx.xxx:8080'  #IP address and port This is different for each person and specified by the phyphox app
 
 start_dat = 'http://' + IPAddress + '/control?cmd=start'  #Starting a data collection
 clear_dat = 'http://' + IPAddress + '/control?cmd=clear'  #Clearing a data collection
@@ -51,7 +52,11 @@ while True:                                           # Continue forever
     
     # read the captured data
     data = pd.read_excel('./data.xls')                # Read the saved data
-    illuminance = data['Illuminance (lx)'].to_list()
+    # Change this one to the particular column name
+    if IS_SOUND == False:
+        rawData = data['Illuminance (lx)'].to_list()
+    else:
+        rawData = data['Sound pressure level (dB)'].to_list()[3:-1]
     
 
     # illuminance is a list of data that contains the lux value
