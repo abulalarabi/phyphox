@@ -15,8 +15,13 @@ data_dur = 1           # amount of time to collect data
 delay    = 0.1         # sleep time
 
 # read two images
-lightOn  = cv2.imread("../../raster/lightson.png")
-lightOff = cv2.imread("../../raster/lightsoff.png")
+lightOn  = cv2.imread("./raster/lightson.png")         # raster to show when lights on
+
+# Load raster to show when lights off
+# ***** YOUR CODE ***** #
+
+
+
 
 while True:                                           # Continue forever
 
@@ -24,14 +29,18 @@ while True:                                           # Continue forever
     try:
         print('Poking device to capture data')
         urllib.request.urlopen(clear_dat)             # Clear previous data
-        urllib.request.urlopen(start_dat)             # Start collecting data!!
+        
+        # Now Start collecting data in a similar way using start_dat
+        # ***** YOUR CODE ***** #
+
+
         
     except:
         print('Device Failed to Start')
             
     time.sleep(data_dur)                              # let the device to collect some data
     
-    # get data
+    # get and save data
     try:
         urllib.request.urlopen(stop_dat)              # Stop data collection
         r = requests.get(save_dat)                    # Get data (in excel file)
@@ -39,21 +48,45 @@ while True:                                           # Continue forever
     except:
         print('Device Failed to Collect Data')
 
-    # calculate average of the readings
+    
+    # read the captured data
     data = pd.read_excel('./data.xls')                # Read the saved data
-    lux = np.mean(data['Illuminance (lx)'].to_list())
-    print('Mean lux: ', lux,'\n')
+    illuminance = data['Illuminance (lx)'].to_list()
+    
+
+    # illuminance is a list of data that contains the lux value
+    # now calculate mean value of the illumincance
+
+
+
+    # print the mean value of illuminance
+    # then take note with and without putting your hands over the smartphone
+    # ***** YOUR CODE ***** #
+
+
+
+    # Set a threshold value
+    # this value can be the average of two readings that you noted before
+    # ***** YOUR CODE ***** #
+    threshold = 0                                   # set this to desired value
+
 
 
     # controling interface
-    if lux<15:                                        # set this to desired value
+    if lux<threshold:                                   
         cv2.imshow('Light Status', lightOff)
     else:
-        cv2.imshow('Light Status', lightOn)
+        # show the lightOn raster in the same window
+        # ***** YOUR CODE ***** #
+
 
 
     # if q button is pressed then exit
     if cv2.waitKey(int(delay*1000)) & 0xFF == ord('q'):
         urllib.request.urlopen(clear_dat)             # Clear previous data
-        urllib.request.urlopen(stop_dat)              # Stop data collection
+        
+        # Stop data collection
+        # ***** YOUR CODE ***** #
+
+
         exit()                                        # exit the program

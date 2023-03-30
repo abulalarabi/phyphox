@@ -1,0 +1,5 @@
+pandas
+requests
+numpy
+opencv-contrib-python
+xlrd
