@@ -130,6 +130,11 @@ def main():
     y = data.iloc[:,0]
     clf = modelTraining(X,y)
 
+    # save the model
+    import pickle
+    with open('model.pkl','wb') as f:
+        pickle.dump(clf,f)
+
     # new data
     data = getData()
     features = getFeatures(data)
