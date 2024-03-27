@@ -101,7 +101,9 @@ while True:                                           # Continue forever
 
     # if q button is pressed then exit
     if cv2.waitKey(int(delay*1000)) & 0xFF == ord('q'):
-        urllib.request.urlopen(clear_dat)             # Clear previous data
+        # Clear data collection
+        # ***** YOUR CODE ***** #
+        
         
         # Stop data collection
         # ***** YOUR CODE ***** #
