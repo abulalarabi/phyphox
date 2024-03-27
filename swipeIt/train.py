@@ -136,6 +136,7 @@ def main():
         pickle.dump(clf,f)
 
     # new data
-    data = getData()
-    features = getFeatures(data)
-    predict(features,clf)
+    while True:
+        data = getData()
+        features = getFeatures(data)
+        predict(features,clf)
