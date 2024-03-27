@@ -23,6 +23,7 @@ def getData():
         print('Poking device to capture data')
         urllib.request.urlopen(clear_dat)             # Clear previous data
         urllib.request.urlopen(start_dat)             # Start collecting data!!
+        print('Move your hand now')
         
     except:
         print('Device Failed to Start')
@@ -99,7 +100,7 @@ def collectData():
     df = pd.DataFrame()
 
     # collect 20 sample data
-    for i in range(5):
+    for i in range(20):
         print('Collecting data: ',i)
         data = getData()
         features = getFeatures(data)
@@ -110,10 +111,26 @@ def collectData():
     df.to_csv('data.csv')
 
 
-def modelTraining(X,y)
+def modelTraining(X,y):
     clf = svm.SVC(kernel='linear', C=1.0)
     clf.fit(X,y)
+    return clf
 
 
-def predict(newData):
+def predict(newData,clf):
     print(clf.predict([newData]))
+
+def main():
+    print('Move your phone to right')
+    collectData()
+    print('Move your phone to left')
+    collectData()
+    data = pd.read_csv('data.csv')
+    X = data.iloc[:,1:]
+    y = data.iloc[:,0]
+    clf = modelTraining(X,y)
+
+    # new data
+    data = getData()
+    features = getFeatures(data)
+    predict(features,clf)
