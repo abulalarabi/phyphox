@@ -17,7 +17,9 @@ data_dur = 1           # amount of time to collect data
 delay    = 0.1         # sleep time
 
 # read two images
+# IF YOU ARE USING SOUND, you can use soundon.png and soundoff.png files.
 lightOn  = cv2.imread("./rasters/lightson.png")         # raster to show when lights on
+#soundOn = cv2.imread("./rasters/soundon.png")
 
 # Load raster to show when lights off
 # ***** YOUR CODE ***** #
