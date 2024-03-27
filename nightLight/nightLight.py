@@ -62,6 +62,7 @@ while True:                                           # Continue forever
 
     # illuminance is a list of data that contains the lux value
     # now calculate mean value of the illumincance
+    # ***** YOUR CODE ***** #
 
 
 
