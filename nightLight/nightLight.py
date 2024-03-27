@@ -4,6 +4,7 @@ import pandas as pd             # for reading data
 import numpy as np              # for calculations
 import cv2                      # for image viewing
 
+# change this to true if you are using audio
 IS_SOUND = False
 IPAddress = 'xxx.xxx.xxx.xxx:8080'  #IP address and port This is different for each person and specified by the phyphox app
 
