@@ -68,6 +68,7 @@ while True:                                           # Continue forever
 
     # sound or illuminance is a list of data that contains the audio or lux value
     # now calculate mean value of the illumincance or sound value
+    # NOTE: the variable name here is meanValue
     # ***** YOUR CODE ***** #
 
 
@@ -87,10 +88,13 @@ while True:                                           # Continue forever
 
 
     # controling interface
-    if lux<threshold:                                   
-        cv2.imshow('Light Status', lightOff)
+    if meanValue<threshold:
+        # show the lightOff/soundOff raster in the window named 'Light Status' or 'Sound Status'
+        # example: cv2.imshow('Light Status', lightOff)
+        # ***** YOUR CODE ***** #
+        
     else:
-        # show the lightOn raster in the same window
+        # show the lightOn/soundOn raster in the window named 'Light Status' or 'Sound Status'
         # ***** YOUR CODE ***** #
 
 
