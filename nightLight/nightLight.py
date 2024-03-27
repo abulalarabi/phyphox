@@ -40,7 +40,7 @@ while True:                                           # Continue forever
 
         
     except:
-        print('Device Failed to Start')
+        print('Device Failed to Start\nCheck the IP address and if the App is running')
             
     time.sleep(data_dur)                              # let the device to collect some data
     
