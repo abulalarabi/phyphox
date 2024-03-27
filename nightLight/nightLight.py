@@ -44,7 +44,11 @@ while True:                                           # Continue forever
     
     # get and save data
     try:
-        urllib.request.urlopen(stop_dat)              # Stop data collection
+        # Now stop collecting data in a similar way using stop_dat
+        # ***** YOUR CODE ***** #
+
+
+        
         r = requests.get(save_dat)                    # Get data (in excel file)
         open('./data.xls', 'wb').write(r.content)     # Save data for later use
     except:
