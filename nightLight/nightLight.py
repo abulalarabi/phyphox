@@ -64,14 +64,15 @@ while True:                                           # Continue forever
         rawData = data['Sound pressure level (dB)'].to_list()[3:-1]
     
 
-    # illuminance is a list of data that contains the lux value
-    # now calculate mean value of the illumincance
+    # sound or illuminance is a list of data that contains the audio or lux value
+    # now calculate mean value of the illumincance or sound value
     # ***** YOUR CODE ***** #
 
 
 
-    # print the mean value of illuminance
+    # print the mean value of illuminance or sound
     # then take note with and without putting your hands over the smartphone
+    # if you are using audio then take note with and without sound
     # ***** YOUR CODE ***** #
 
 
